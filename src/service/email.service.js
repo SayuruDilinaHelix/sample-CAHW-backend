@@ -7,14 +7,14 @@ class EmailService {
       let transporter = nodemailer.createTransport({
         service: "gmail", // Use "gmail" or SMTP settings
         auth: {
-          user: process.env.EMAIL_USER, // Your email
-          pass: process.env.EMAIL_PASS, // App password
+          user: process.env.EMAIL_USERNAME,
+          pass: process.env.EMAIL_PASSWORD,
         },
       });
 
       // Email options
       let mailOptions = {
-        from: process.env.EMAIL_USER,
+        from: process.env.EMAIL_USERNAME,
         to,
         subject,
         html: `<div> Hello world </div>`,
